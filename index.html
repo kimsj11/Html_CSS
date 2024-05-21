@@ -1,84 +1,145 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>테스트 메인 페이지</title>
+    <title>Test Main Page</title>
 
-<style>
-    #my-h1{
-        color: rgb(255, 255, 255);
-        font-size: 50px;
-        background-color: black;
-    }
+    <style>
+        #my-h1 {
+            color: rgb(255, 255, 255);
+            font-size: 50px;
+            text-align: center;
+            padding: 20px;
+        }
 
-    .my-fav{
-        background-color: rgb(203, 219, 248);
-    }
+        .rounded-header {
+            background-color: rgb(203, 219, 248);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px auto;
+            text-align: center;
+            width: 800px;
+            border: solid 5px rgb(0, 0, 0);
+        }
 
-    div {
-        border: solid 5px rgb(0, 0, 0);
-        margin-bottom: 10px;
-        padding: 10px;
-    }
+        .my-fav,
+        .my-input,
+        .my-list,
+        .my-img {
+            background-color: rgb(203, 219, 248);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px auto;
+            width: 800px;
+            border: solid 5px rgb(0, 0, 0);
+        }
 
-    .my-img img{
-        width: 350px;
-    }
+        .my-fav h2 {
+            text-align: center;
+        }
 
-    .my-input{
-        background-color: rgb(201, 226, 197);
-        color: #040000;
-    }
+        .my-input div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
 
-    .my-input input{
-        background-color: rgb(248, 249, 249);
-        color: #000000;
-        border-radius: 6px;
-    }
+        .my-input input[type="text"],
+        .my-input input[type="password"] {
+            background-color: rgb(219, 230, 251);
+            color: #000000;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 5px;
+            width: calc(100% - 160px);
+            box-sizing: border-box;
+            font-size: 16px;
+        }
 
-</style>
+        .my-input input[type="button"] {
+            background-color: rgb(0, 123, 255);
+            color: white;
+            border-radius: 8px;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            width: 120px;
+            box-sizing: border-box;
+        }
+
+        .my-list ul,
+        .my-list ol {
+            list-style-position: inside;
+            padding-left: 0;
+        }
+
+        .my-list li {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        .my-img img {
+            max-width: 50%;
+            height: auto;
+            margin: 10px 0;
+        }
+    </style>
 </head>
+
 <body>
-    <h1 id="my-h1">내가 좋아하는 동물</h1>
-    
-    <div class="my-fav">
-    <h2>내가 좋아하는 동물에 대한 소개</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae asperiores magnam voluptatibus amet, molestiae modi sed temporibus mollitia, laudantium obcaecati deserunt. Incidunt tempore quas, necessitatibus libero amet id a omnis!</p>
-    </div>
-    
-    <div class="my-img">
-    <br/>
-    <img src="data:image/jpeg;base64,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" alt="">
-    <br/>
-    <img src="asdfasdflkajsdflkajsdf;" alt="이미지가 없을때 보이는 텍스트">
-    </div>
+    <header class="rounded-header">
+        <h1 id="my-h1">내가 좋아하는 동물</h1>
+    </header>
 
-    <div class="my-input">
-    <input type="text" placeholder="이름을 입력해 주세요.">
-    <input type="button" value="버튼" onclick="alert('클릭했다.')">
-    <input type="password" placeholder="패스워드를 입력해주세요.">
-    <input type="checkbox" id="test">
-    <label for="test">체크박스</label>
-    <span><input type="radio">라디오</span>
-    </div>
+    <main>
+        <section class="my-fav">
+            <h2>내가 좋아하는 동물에 대한 소개</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae asperiores magnam voluptatibus amet,
+                molestiae modi sed temporibus mollitia, laudantium obcaecati deserunt. Incidunt tempore quas,
+                necessitatibus libero amet id a omnis!</p>
+        </section>
 
-    <div class="my-list">
-    <ul>
-        <li>사과</li>
-        <li>사과</li>
-        <li>사과</li>
-        <li>사과</li>
-        <li>사과</li>
-    </ul>
-    
-    <ol>
-        <li>사과</li>
-        <li>사과</li>
-        <li>사과</li>
-        <li>사과</li>
-        
-    </ol>
-</div>    
+        <section class="my-input">
+            <div>
+                <input type="text" placeholder="아이디를 입력해 주세요.">
+                <input type="button" value="로그인" onclick="alert('로그인 했지롱~')">
+            </div>
+            <div>
+                <input type="password" placeholder="패스워드를 입력해주세요.">
+                <input type="button" value="로그아웃" onclick="alert('로그아웃 했지롱~')">
+            </div>
+        </section>
+
+        <section class="my-img">
+            <a href="https://ibb.co/t2XkxZj">
+                <img src="https://i.ibb.co/VCmrQHn/Kakao-Talk-Photo-2024-05-21-22-27-00.jpg" alt="Kakao-Talk-Photo-2024-05-21-22-27-00" border="0">
+            </a>
+            <br />
+            <img src="" alt="이미지가 없을때 보이는 텍스트">
+        </section>
+
+        <section class="my-list">
+            <ul>
+                <li>사과</li>
+                <li>사과</li>
+                <li>사과</li>
+                <li>사과</li>
+                <li>사과</li>
+            </ul>
+
+            <ol>
+                <li>사과</li>
+                <li>사과</li>
+                <li>사과</li>
+                <li>사과</li>
+            </ol>
+        </section>
+    </main>
 </body>
+
 </html>
