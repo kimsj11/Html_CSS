@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 기초</title>
+    <!-- 상대 경로로 외부 js외부 파일을 가져오는 방법 -->
+    <script src="./js/test_script.js">
+        alert("스크립트 파일 가져오는 태그 안에 쓴 값");
+    </script>
+    <!-- 절대 경로로 외부 js외부 파일을 가져오는 방법 -->
+    <script src="file:///Users/sungjin/Documents/workspace/Html_CSS/js/test_script2.js"></script>
+
+</head>
+<body>
+    <p>스크립트 전</p>
+    <script>
+        alert("Hello, World!")
+    </script>
+<p>스크립트 후</p>
+</body>
+</html>
